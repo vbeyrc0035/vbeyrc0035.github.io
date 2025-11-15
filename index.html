@@ -3,30 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday</title>
+  <title>Button Clicker</title>
   <style>
     body {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       height: 100vh;
       margin: 0;
     }
 
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 36px;
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-<h1>You clicked <strong>23 times</strong> and that's how old you are now</h1>
+<button id="clickButton" onclick="handleClick()">Click Me !!</button>
+
+<script>
+  let clickCount = 1;
+  const customTexts = [
+    "Click again !!", //1
+    "Phir se click",
+    "Click once again", //3
+    "Ek aur baar click",
+    "Again clickk",
+    "Once more",
+    "Thoda sa aur click",
+    "Keep clickingg",
+    "Hone wala hai, click again",
+    "aur thoda click",
+    "click click click",
+    "bas hone wala hai, click",
+    "Ek aur baar pls click",
+    "bas hone wala ab, click again",
+    "Phir se click",
+    "sorry, almost done, clickkk",
+    "Once more",
+    "Ek aur baar click",
+    "Thoda aur click",
+    "Again click",
+    "Almost done, click again",
+    "Last waale last click",
+    "Done almost, ek aur click bas",
+    "Last click",
+    "Ye pakka last click",
+  ];
+
+  function handleClick() {
+    const button = document.getElementById('clickButton');
+
+    if (clickCount >= 1 && clickCount <= customTexts.length - 1) {
+      button.textContent = customTexts[clickCount];
+      clickCount++;
+    } else if (clickCount === customTexts.length) {
+      window.location.href = 'bday.html';
+    }
+  }
+</script>
 
 </body>
 </html>
